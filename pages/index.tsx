@@ -16,7 +16,7 @@ interface Hotel {
 }
 
 const Home: NextPage = () => {
-  const [hotels, setHotels] = useState<Hotel[] | []>();
+  const [hotels, setHotels] = useState<Hotel[] | []>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [filter, setFilter] = useState<"all"|"asc"|"desc"|"cat-1"|"cat-2"|"cat-3"|"cat-4"|"cat-5"|"rat-1"|"rat-2"|"rat-3"|"rat-4"|"rat-5">("all")
 
@@ -28,7 +28,6 @@ const Home: NextPage = () => {
         url: '/hotel'
       });
 
-      console.log(response.data);
       setHotels(response.data);
       setLoading(false);
     } catch (error) {
