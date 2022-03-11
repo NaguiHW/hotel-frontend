@@ -1,0 +1,90 @@
+@import "styles/variables";
+
+.loadingContainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../public/images/banner.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 4rem;
+    background-color: $primary-color-transparency;
+    color: $fifth-color;
+  }
+}
+
+.body {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .filters {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    h3 {
+      margin-right: 5px;
+    }
+
+    button {
+      font-size: 1.2rem;
+      border: none;
+      margin: 0 5px;
+      padding: 5px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      svg {
+        color: $fifth-color;
+      }
+
+      &:disabled {
+        background-color: $disabled !important;
+      }
+    }
+
+    .selectCategory, .filterByRating, .orderByPrice {
+      display: flex;
+      align-items: center;
+      margin: 5px 25px;
+
+      .buttonNumbers, .upDownButton {
+        width: 2rem;
+        justify-content: center;
+        background-color: $primary-color;
+        color: $fifth-color;
+        font-weight: bold;
+
+        &:hover {
+          background-color: $secondary-color;
+        }
+
+        &:active {
+          background-color: $third-color
+        }
+      }
+    }
+  }
+
+  .errorMessage {
+    width: 90%;
+    margin: 50px auto;
+    text-align: center;
+  }
+}
