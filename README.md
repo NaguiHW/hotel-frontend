@@ -1,34 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hotel Frontend
+This is the frontend part of the `Hotel Project`. Still a lo to improve.
 
-## Getting Started
+- [Instalation](#Instalation)
+- [Bugs](#bugs)
+- [Improvements](#improvements)
 
-First, run the development server:
+## Instalation
 
+This project is NodeJS base, so you have to have installed NodeJS to run the following commands.
+
+- Clone repository
+```
+git clone git@github.com:NaguiHW/hotel-frontend.git
+```
+
+- Install dependencies.
 ```bash
 npm run dev
 # or
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Bugs
+I could identify a few bugs:
+- For some reason when you try to load hotels with id greater than 9, the app crash, at least in my pc.
+- When you try to compare the rating of the hotels with id greater than 9 also the app crash.
+- Some buttons doesn't have the right shape.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Improvements
+- Resolve the bugs mentioned before.
+- Deploy the app to a server.
+- Add styles to the admin area.
+- Create an authentication to separate the admin to area to the common user.
+- Create more validations before to create, update or delete some data from the database.
+- Optimize the loading of the data.
