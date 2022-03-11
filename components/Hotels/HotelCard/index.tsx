@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import styles from "../../../styles/HotelCard.module.scss";
+import { formatUrl } from "../../../functions/formatUrl";
 
 interface Hotel {
   id: number;
@@ -15,27 +17,24 @@ const HotelCard = ({
   hotel: Hotel
 }) => {
   const [url, setUrl] = useState('');
-  const formatUrl = () => {
-    const link = hotel.photos.split("'")[1];
-
-    setUrl(link);
-  };
 
   useEffect(() => {
-    formatUrl();
+    formatUrl(hotel.photos, setUrl);
   }, []);
 
   return (
-    <div className={styles.hotelCard}>
-      <div className={styles.imageContainer}>
-        <img src={url} alt={hotel.name} />
+    <Link href={`/hotel/${hotel.id}`}>
+      <div className={styles.hotelCard}>
+        <div className={styles.imageContainer}>
+          <img src={url} alt={hotel.name} />
+        </div>
+        <div className={styles.data}>
+          <h3>{hotel.name}</h3>
+          <h4>Category: {[...Array(hotel.category)].map(() => <span>&#11088;</span>)}</h4>
+          <h4>Price per night: ${hotel.price.toFixed(2)}</h4>
+        </div>
       </div>
-      <div className={styles.data}>
-        <h3>{hotel.name}</h3>
-        <h4>Category: {[...Array(hotel.category)].map(() => <span>&#11088;</span>)}</h4>
-        <h4>Price per night: ${hotel.price.toFixed(2)}</h4>
-      </div>
-    </div>
+    </Link>
   )
 };
 
