@@ -6,6 +6,7 @@ import axios from '../functions/axios';
 import Banner from '../components/Banner';
 import Filters from '../components/Filters';
 import Hotels from '../components/Hotels';
+import Router from 'next/router';
 
 interface Hotel {
   id: number;
@@ -108,6 +109,10 @@ const Home: NextPage = () => {
     }
   };
 
+  const redirectAdmin = () => {
+    Router.push('/admin');
+  };
+
   useEffect(() => {
     if (filter === "all") {
       getHotels();
@@ -125,7 +130,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Banner title='Rate Your Hotel!' styles={styles.banner} />
+      <Banner title='Rate Your Hotel!' styles={styles.banner} admin={redirectAdmin} />
       <div className={styles.body}>
         <Filters
           filters={styles.filters}
